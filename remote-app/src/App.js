@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const App = () => (
   <BrowserRouter>
-    <h1>Next JS with React</h1>
+    <h1>React</h1>
     <h2>Remote App</h2>
     <Button />
   </BrowserRouter>

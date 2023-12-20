@@ -1,5 +1,14 @@
-import App from './App';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom";
+import { ApolloProvider } from "@apollo/client";
+import { createApolloClient } from "./apolloClient";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const { apolloClient } = createApolloClient();
+
+ReactDOM.render(
+  <ApolloProvider client={apolloClient}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("root")
+);

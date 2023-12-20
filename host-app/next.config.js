@@ -1,13 +1,13 @@
-const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
-const deps = require('../package.json').dependencies;
+const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
+const deps = require("../package.json").dependencies;
 
 module.exports = {
   async rewrites() {
     return [
       // Rewrite everything else to use `pages/index`
       {
-        source: '/:path*',
-        destination: '/',
+        source: "/:path*",
+        destination: "/",
       },
     ];
   },
@@ -15,16 +15,25 @@ module.exports = {
     if (!options.isServer) {
       config.plugins.push(
         new NextFederationPlugin({
-          name: 'host',
-          filename: 'static/chunks/remote.js',
+          name: "host",
+          filename: "static/chunks/remote.js",
           remotes: {
-            remote: 'remote@http://localhost:3001/remote.js',
+            remote: "remote@http://localhost:3001/remote.js",
           },
-          exposes: {
-            './react-router-dom': 'react-router-dom',
+          shared: {
+            ...deps,
+            "react-router-dom": {
+              eager: true,
+              singleton: true,
+              requiredVersion: deps["react-router-dom"],
+            },
+            "@apollo/client": {
+              eager: true,
+              singleton: true,
+              requiredVersion: deps["@apollo/client"],
+            },
           },
-          shared: { ...deps },
-        }),
+        })
       );
     }
 
