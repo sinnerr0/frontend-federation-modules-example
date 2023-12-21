@@ -32,7 +32,7 @@ module.exports = {
       name: "apollo",
       filename: "remote.js",
       exposes: {
-        './PokemonList': './src/components/PokemonList',
+        "./PokemonList": "./src/components/PokemonList",
       },
       remotes: {},
       shared: {

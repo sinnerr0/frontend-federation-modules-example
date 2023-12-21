@@ -37,13 +37,13 @@ module.exports = {
       remotes: {},
       shared: {
         ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps["react"],
+        },
         "react-router-dom": {
           singleton: true,
           requiredVersion: deps["react-router-dom"],
-        },
-        "@apollo/client": {
-          singleton: true,
-          requiredVersion: deps["@apollo/client"],
         },
       },
     }),

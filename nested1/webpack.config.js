@@ -39,9 +39,9 @@ module.exports = {
       },
       shared: {
         ...deps,
-        "@apollo/client": {
+        react: {
           singleton: true,
-          requiredVersion: deps["@apollo/client"],
+          requiredVersion: deps["react"],
         },
       },
     }),

@@ -25,12 +25,10 @@ module.exports = {
           shared: {
             ...deps,
             "react-router-dom": {
-              eager: true,
               singleton: true,
               requiredVersion: deps["react-router-dom"],
             },
             "@apollo/client": {
-              eager: true,
               singleton: true,
               requiredVersion: deps["@apollo/client"],
             },
