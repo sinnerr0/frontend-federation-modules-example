@@ -25,7 +25,7 @@ export const getServerSideProps = async () => {
     const { apolloClient } = createApolloClient();
     await apolloClient.query({
       query: GET_POKEMONS,
-      variables: { limit: 10, offset: 0 },
+      variables: { limit: 5, offset: 0 },
     });
     return {
       props: {

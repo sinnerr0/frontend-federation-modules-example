@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./common/button";
 import { useEffect, useState, lazy } from "react";
 import {
   BrowserRouter,
@@ -7,7 +7,8 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-import { NestedComponent } from "./remote";
+import Nested from "./nested/nested";
+import Apollo from "./apollo/apollo";
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
             <Link to="/">Nested Remote</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/apollo">Apollo Cache Sharing</Link>
           </li>
           <li>
             <Link to="/topics">Topics</Link>
@@ -33,41 +34,12 @@ export default function App() {
         </ul>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Nested />} />
+          <Route path="/apollo" element={<Apollo />} />
           <Route path="/topics" element={<Topics />} />
         </Routes>
       </div>
     </BrowserRouter>
-  );
-}
-
-function Home() {
-  const [state, setState] = useState("");
-  return (
-    <>
-      <div style={{ padding: "1rem" }}>
-        <h3>Chagne Remote State Test</h3>
-        <input
-          type="text"
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-          placeholder="Luke, I am your father..."
-        />
-      </div>
-      <NestedComponent content={state} />
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <h1>About</h1>
-      <Link to="/topics">
-        <Button text="Topics" />
-      </Link>
-    </>
   );
 }
 
