@@ -19,3 +19,13 @@ export function PokemonList(props) {
   }, []);
   return <>{Component && <Component {...props} />}</>;
 }
+
+export function Route(props) {
+  const [Component, setComponent] = useState(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setComponent(lazy(() => import("route/Route")));
+    }
+  }, []);
+  return <>{Component && <Component {...props} />}</>;
+}

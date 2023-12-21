@@ -5,13 +5,14 @@
   "private": true,
   "workspaces": [
     "shell",
-    "apollo",
     "nested1",
-    "nested2"
+    "nested2",
+    "apollo",
+    "route"
   ],
   "main": "index.js",
   "scripts": {
-    "start": "concurrently 'cd shell && npm run dev' 'cd nested1 && npm run dev' 'cd nested2 && npm run dev'"
+    "start": "concurrently 'cd shell && npm run dev' 'cd nested1 && npm run dev' 'cd nested2 && npm run dev' 'cd apollo && npm run dev' 'cd route && npm run dev'"
   },
   "keywords": [],
   "author": "rahulteja-dev",

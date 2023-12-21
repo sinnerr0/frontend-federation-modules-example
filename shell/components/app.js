@@ -1,14 +1,7 @@
-import Button from "./common/button";
-import { useEffect, useState, lazy } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nested from "./nested/nested";
 import Apollo from "./apollo/apollo";
+import { Route as RouteTest } from "./remote";
 
 export default function App() {
   return (
@@ -29,28 +22,24 @@ export default function App() {
             <Link to="/apollo">Apollo Cache Sharing</Link>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
+            <Link to="/route">Route Sharing</Link>
           </li>
         </ul>
 
         <Routes>
           <Route path="/" element={<Nested />} />
           <Route path="/apollo" element={<Apollo />} />
-          <Route path="/topics" element={<Topics />} />
+          <Route
+            path="/route"
+            element={
+              <div>
+                <RouteTest />
+              </div>
+            }
+          />
+          <Route path="*" element={<div>Not Found</div>} />
         </Routes>
       </div>
     </BrowserRouter>
-  );
-}
-
-function Topics() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <h1>Topics</h1>
-      <Link to="/topics">
-        <Button text="Home" />
-      </Link>
-    </>
   );
 }
