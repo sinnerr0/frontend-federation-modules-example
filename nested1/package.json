@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-react_remote-app",
+  "name": "nested1",
   "version": "0.0.0",
   "devDependencies": {
     "@babel/core": "7.23.5",
@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "webpack-cli serve",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3002",
+    "serve": "serve dist -p 3001",
     "clean": "rm -rf dist"
   },
   "dependencies": {

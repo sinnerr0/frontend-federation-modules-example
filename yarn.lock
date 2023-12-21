@@ -4970,6 +4970,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nested1@workspace:nested1":
+  version: 0.0.0-use.local
+  resolution: "nested1@workspace:nested1"
+  dependencies:
+    "@apollo/client": "npm:^3.8.8"
+    "@babel/core": "npm:7.23.5"
+    "@babel/preset-react": "npm:7.23.3"
+    "@stitches/react": "npm:^1.2.8"
+    babel-loader: "npm:9.1.3"
+    graphql: "npm:^16.8.1"
+    html-webpack-plugin: "npm:5.5.3"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-router-dom: "npm:^6.21.0"
+    serve: "npm:14.2.1"
+    webpack: "npm:5.89.0"
+    webpack-cli: "npm:5.1.4"
+    webpack-dev-server: "npm:4.15.1"
+  languageName: unknown
+  linkType: soft
+
+"nested2@workspace:nested2":
+  version: 0.0.0-use.local
+  resolution: "nested2@workspace:nested2"
+  dependencies:
+    "@apollo/client": "npm:^3.8.8"
+    "@babel/core": "npm:7.23.5"
+    "@babel/preset-react": "npm:7.23.3"
+    "@stitches/react": "npm:^1.2.8"
+    babel-loader: "npm:9.1.3"
+    graphql: "npm:^16.8.1"
+    html-webpack-plugin: "npm:5.5.3"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-router-dom: "npm:^6.21.0"
+    serve: "npm:14.2.1"
+    webpack: "npm:5.89.0"
+    webpack-cli: "npm:5.1.4"
+    webpack-dev-server: "npm:4.15.1"
+  languageName: unknown
+  linkType: soft
+
 "next@npm:^13.0.7":
   version: 13.5.6
   resolution: "next@npm:13.5.6"
@@ -5034,9 +5076,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"nextjs-react_host-app@workspace:host-app":
+"nextjs-react_host-app@workspace:shell":
   version: 0.0.0-use.local
-  resolution: "nextjs-react_host-app@workspace:host-app"
+  resolution: "nextjs-react_host-app@workspace:shell"
   dependencies:
     "@apollo/client": "npm:^3.8.8"
     "@module-federation/nextjs-mf": "npm:^7.0.8"
@@ -5048,27 +5090,6 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.21.0"
-    webpack: "npm:5.89.0"
-    webpack-cli: "npm:5.1.4"
-    webpack-dev-server: "npm:4.15.1"
-  languageName: unknown
-  linkType: soft
-
-"nextjs-react_remote-app@workspace:remote-app":
-  version: 0.0.0-use.local
-  resolution: "nextjs-react_remote-app@workspace:remote-app"
-  dependencies:
-    "@apollo/client": "npm:^3.8.8"
-    "@babel/core": "npm:7.23.5"
-    "@babel/preset-react": "npm:7.23.3"
-    "@stitches/react": "npm:^1.2.8"
-    babel-loader: "npm:9.1.3"
-    graphql: "npm:^16.8.1"
-    html-webpack-plugin: "npm:5.5.3"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-router-dom: "npm:^6.21.0"
-    serve: "npm:14.2.1"
     webpack: "npm:5.89.0"
     webpack-cli: "npm:5.1.4"
     webpack-dev-server: "npm:4.15.1"

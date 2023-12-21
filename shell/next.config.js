@@ -18,7 +18,7 @@ module.exports = {
           name: "host",
           filename: "static/chunks/remote.js",
           remotes: {
-            remote: "remote@http://localhost:3001/remote.js",
+            nested1: "nested1@http://localhost:3001/remote.js",
           },
           shared: {
             ...deps,

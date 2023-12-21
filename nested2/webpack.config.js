@@ -10,10 +10,10 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
-    port: 3001,
+    port: 3002,
   },
   output: {
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://localhost:3002/",
   },
   module: {
     rules: [
@@ -29,20 +29,14 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "remote",
+      name: "nested2",
       filename: "remote.js",
       exposes: {
-        "./Button": "./src/Button",
+        "./Image": "./src/Image",
       },
-      remotes: {
-        host: "host@http://localhost:3000/_next/static/chunks/remote.js",
-      },
+      remotes: {},
       shared: {
         ...deps,
-        "react-router-dom": {
-          singleton: true,
-          requiredVersion: deps["react-router-dom"],
-        },
         "@apollo/client": {
           singleton: true,
           requiredVersion: deps["@apollo/client"],

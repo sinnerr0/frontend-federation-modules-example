@@ -4,12 +4,13 @@
   "description": "",
   "private": true,
   "workspaces": [
-    "host-app",
-    "remote-app"
+    "shell",
+    "nested1",
+    "nested2"
   ],
   "main": "index.js",
   "scripts": {
-    "start": "concurrently 'cd host-app && npm run dev' 'cd remote-app && npm run dev'"
+    "start": "concurrently 'cd shell && npm run dev' 'cd nested1 && npm run dev' 'cd nested2 && npm run dev'"
   },
   "keywords": [],
   "author": "rahulteja-dev",
