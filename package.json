@@ -6,7 +6,9 @@
   "workspaces": [
     "shell",
     "nested1",
+    "nested1ts",
     "nested2",
+    "nested2ts",
     "apollo",
     "route"
   ],
