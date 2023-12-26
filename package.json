@@ -5,6 +5,7 @@
   "private": true,
   "workspaces": [
     "shell",
+    "shellts",
     "nested1",
     "nested1ts",
     "nested2",
@@ -16,7 +17,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "start": "concurrently 'cd shell && npm run dev' 'cd nested1 && npm run dev' 'cd nested2 && npm run dev' 'cd apollo && npm run dev' 'cd route && npm run dev'"
+    "start": "concurrently 'cd shell && npm run dev' 'cd nested1 && npm run dev' 'cd nested2 && npm run dev' 'cd apollo && npm run dev' 'cd route && npm run dev'",
+    "start-ts": "concurrently 'cd shellts && yarn dev' 'cd nested1ts && yarn dev' 'cd nested2ts && yarn dev' 'cd apollots && yarn dev' 'cd routets && yarn dev'"
   },
   "keywords": [],
   "author": "rahulteja-dev",

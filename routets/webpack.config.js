@@ -5,7 +5,7 @@ const path = require("path");
 const deps = require("./package.json").dependencies;
 
 const federationConfig = {
-  name: "nested2ts",
+  name: "routets",
   filename: "remoteEntry.js",
   exposes: {
     "./Route": "./src/Route",

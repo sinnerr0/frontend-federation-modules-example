@@ -16,7 +16,7 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     setIsServer(false);
     initializeApolloClient(pageProps);
-  }, []);
+  }, [pageProps]);
 
   if (isServer) return null;
 
