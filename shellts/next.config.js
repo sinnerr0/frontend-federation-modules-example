@@ -24,11 +24,20 @@ const nextConfig = {
           routets: "routets@http://localhost:3004/remoteEntry.js",
         },
         shared: {
-          ...deps,
-          "react-router-dom": {
+          react: {
+            eager: true,
             singleton: true,
           },
-          "@apollo/client": {
+          "react-dom": {
+            eager: true,
+            singleton: true,
+          },
+          "react/jsx-runtime": {
+            eager: true,
+            singleton: true,
+          },
+          "react-router-dom": {
+            eager: true,
             singleton: true,
           },
         },

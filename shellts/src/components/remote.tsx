@@ -2,6 +2,7 @@ import { useEffect, useState, lazy } from "react";
 import PokemonList, { PokemonListProps } from "@mf-types/apollots/PokemonList";
 import Content, { ContentProps } from "@mf-types/nested1ts/Content";
 import RemoteRoute from "@mf-types/routets/Route";
+import ErrorBoundary from "./common/error-boundary";
 
 export function Loading() {
   return <div>loading...</div>;
@@ -18,7 +19,11 @@ export function RContent(props: ContentProps) {
     }
   }, []);
   if (!Component) return <Loading />;
-  return <Component {...props} />;
+  return (
+    <ErrorBoundary>
+      <Component {...props} />
+    </ErrorBoundary>
+  );
 }
 
 export function RPokemonList(props: PokemonListProps) {
@@ -30,7 +35,11 @@ export function RPokemonList(props: PokemonListProps) {
     }
   }, []);
   if (!Component) return <Loading />;
-  return <Component {...props} />;
+  return (
+    <ErrorBoundary>
+      <Component {...props} />
+    </ErrorBoundary>
+  );
 }
 
 export function RRoute() {
@@ -42,5 +51,9 @@ export function RRoute() {
     }
   }, []);
   if (!Component) return <Loading />;
-  return <Component />;
+  return (
+    <ErrorBoundary>
+      <Component />
+    </ErrorBoundary>
+  );
 }

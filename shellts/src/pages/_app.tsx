@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import { createApolloClient } from "../apollo/apolloClient";
 import { ApolloProvider } from "@apollo/client";
+import ErrorBoundary from "@/components/common/error-boundary";
+import ErrorPage from "@/components/common/error-page";
 
 const { apolloClient, apolloCache } = createApolloClient({ ssrMode: true });
 
@@ -25,9 +27,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div suppressHydrationWarning>
       {typeof window === "undefined" ? null : (
-        <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
-        </ApolloProvider>
+        <ErrorBoundary fallback={<ErrorPage />}>
+          <ApolloProvider client={apolloClient}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+        </ErrorBoundary>
       )}
     </div>
   );

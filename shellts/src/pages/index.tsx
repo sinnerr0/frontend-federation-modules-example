@@ -2,6 +2,7 @@ import { createApolloClient } from "../apollo/apolloClient";
 
 import { gql } from "@apollo/client";
 import App from "../components/app";
+import { NextPage } from "next";
 
 export const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -38,6 +39,8 @@ export const getServerSideProps = async () => {
   return { props: {} };
 };
 
-export default function Index() {
+const Index: NextPage = () => {
   return <App />;
-}
+};
+
+export default Index;
