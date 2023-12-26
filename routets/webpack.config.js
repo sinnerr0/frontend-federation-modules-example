@@ -5,15 +5,18 @@ const path = require("path");
 const deps = require("./package.json").dependencies;
 
 const federationConfig = {
-  name: "apollots",
+  name: "nested2ts",
   filename: "remoteEntry.js",
   exposes: {
-    "./PokemonList": "./src/components/PokemonList",
+    "./Route": "./src/Route",
   },
   remotes: {},
   shared: {
     ...deps,
-    "@apollo/client": {
+    react: {
+      singleton: true,
+    },
+    "react-router-dom": {
       singleton: true,
     },
   },
@@ -30,11 +33,11 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
-    port: 3003,
+    port: 3004,
   },
   output: {
     clean: true,
-    publicPath: "http://localhost:3003/",
+    publicPath: "http://localhost:3004/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],

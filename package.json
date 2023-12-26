@@ -11,7 +11,8 @@
     "nested2ts",
     "apollo",
     "apollots",
-    "route"
+    "route",
+    "routets"
   ],
   "main": "index.js",
   "scripts": {

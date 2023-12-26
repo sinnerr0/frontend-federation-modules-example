@@ -43,7 +43,6 @@ module.exports = {
         },
         "react-router-dom": {
           singleton: true,
-          requiredVersion: deps["react-router-dom"],
         },
       },
     }),

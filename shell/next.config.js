@@ -26,11 +26,9 @@ module.exports = {
             ...deps,
             "react-router-dom": {
               singleton: true,
-              requiredVersion: deps["react-router-dom"],
             },
             "@apollo/client": {
               singleton: true,
-              requiredVersion: deps["@apollo/client"],
             },
           },
         })

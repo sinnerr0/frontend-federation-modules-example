@@ -39,7 +39,6 @@ module.exports = {
         ...deps,
         "@apollo/client": {
           singleton: true,
-          requiredVersion: deps["@apollo/client"],
         },
       },
     }),
