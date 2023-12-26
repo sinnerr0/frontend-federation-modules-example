@@ -1,10 +1,11 @@
-import "@/styles/globals.css";
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import { createApolloClient } from "../apollo/apolloClient";
 import { ApolloProvider } from "@apollo/client";
 import ErrorBoundary from "@/components/common/error-boundary";
 import ErrorPage from "@/components/common/error-page";
+import { ThemeProvider, type DefaultTheme } from "styled-components";
+import GlobalStyle from "@/components/global.style";
 
 const { apolloClient, apolloCache } = createApolloClient({ ssrMode: true });
 
@@ -14,6 +15,13 @@ function initializeApolloClient(pageProps: any) {
     apolloCache.restore(initialState);
   }
 }
+
+const theme: DefaultTheme = {
+  colors: {
+    primary: "#111",
+    secondary: "#0070f3",
+  },
+};
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isServer, setIsServer] = useState(true);
@@ -28,9 +36,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <div suppressHydrationWarning>
       {typeof window === "undefined" ? null : (
         <ErrorBoundary fallback={<ErrorPage />}>
-          <ApolloProvider client={apolloClient}>
-            <Component {...pageProps} />
-          </ApolloProvider>
+          <ThemeProvider theme={theme}>
+            <ApolloProvider client={apolloClient}>
+              <GlobalStyle />
+              <Component {...pageProps} />
+            </ApolloProvider>
+          </ThemeProvider>
         </ErrorBoundary>
       )}
     </div>

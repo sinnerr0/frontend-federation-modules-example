@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nested from "./nested/nested";
 import Apollo from "./apollo/apollo";
 import { RRoute } from "./remote";
+import { Li } from "./app.style";
 
 export default function App() {
   return (
@@ -15,15 +16,15 @@ export default function App() {
       >
         <h1>Module Federation Example: Next.JS App Shell</h1>
         <ul>
-          <li>
+          <Li>
             <Link to="/">Nested Remote</Link>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <Link to="/apollo">Apollo Cache Sharing</Link>
-          </li>
-          <li>
+          </Li>
+          <Li>
             <Link to="/route">Route Sharing</Link>
-          </li>
+          </Li>
         </ul>
 
         <Routes>
