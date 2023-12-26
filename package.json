@@ -10,6 +10,7 @@
     "nested2",
     "nested2ts",
     "apollo",
+    "apollots",
     "route"
   ],
   "main": "index.js",

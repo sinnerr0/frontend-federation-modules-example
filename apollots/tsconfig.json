@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "jsx": "react",
+    "declaration": false,
+    "importHelpers": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@mf-types/*": ["./@mf-types/*"]
+    }
+  },
+  "include": ["src/**/*", "**/*.d.ts"],
+  "exclude": ["node_modules"]
+}
