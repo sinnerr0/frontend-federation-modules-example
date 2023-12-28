@@ -14,6 +14,7 @@ module.exports = {
   },
   output: {
     publicPath: "http://localhost:3002/",
+    filename: "[name].[contenthash].js",
   },
   module: {
     rules: [
