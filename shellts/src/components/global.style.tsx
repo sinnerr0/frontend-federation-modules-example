@@ -1,9 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import { Global, css } from "@emotion/react";
+import Theme from "./theme";
 
-const GlobalStyle = createGlobalStyle`
+const globalStyle = (t: typeof Theme) => css`
   html,
   body {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${t.colors.primary};
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -20,4 +21,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+export default function GlobalStyle() {
+  return <Global styles={globalStyle(Theme)} />;
+}

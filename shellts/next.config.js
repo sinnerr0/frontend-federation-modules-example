@@ -4,9 +4,6 @@ const deps = require("../package.json").dependencies;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  },
   async rewrites() {
     return [
       // Rewrite everything else to use `pages/index`
