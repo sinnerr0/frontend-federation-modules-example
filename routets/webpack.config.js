@@ -38,6 +38,7 @@ module.exports = {
   output: {
     clean: true,
     publicPath: "http://localhost:3004/",
+    filename: "[name].[contenthash].js",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
