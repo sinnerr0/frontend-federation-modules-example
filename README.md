@@ -8,6 +8,8 @@ NextJS를 앱 쉘(Host)로 사용하며 React Client Side App을 Module(Remote)�
 
 ## Getting Started
 
+http://localhost:3000/ 에서 확인하실 수 있습니다.
+
 ```
 # install packages
 $ yarn install
