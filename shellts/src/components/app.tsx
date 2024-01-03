@@ -25,6 +25,9 @@ export default function App() {
           <Li>
             <Link to="/route">Route Sharing</Link>
           </Li>
+          <Li>
+            <a href="/ssr">SSR Page</a>
+          </Li>
         </ul>
 
         <Routes>

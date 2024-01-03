@@ -7,6 +7,7 @@ import ErrorPage from "@/components/common/error-page";
 import { ThemeProvider } from "@emotion/react";
 import Theme from "@/components/theme";
 import GlobalStyle from "@/components/global.style";
+import { useRouter } from "next/router";
 
 const { apolloClient, apolloCache } = createApolloClient({ ssrMode: true });
 
@@ -17,27 +18,40 @@ function initializeApolloClient(pageProps: any) {
   }
 }
 
+const ssrWhiteList = [/^\/ssr$/];
+
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   const [isServer, setIsServer] = useState(true);
   useEffect(() => {
     setIsServer(false);
     initializeApolloClient(pageProps);
   }, [pageProps]);
 
-  if (isServer) return null;
+  if (ssrWhiteList.some((pattern) => pattern.test(router.pathname))) {
+    return render(Component, pageProps);
+  } else {
+    if (isServer) return null;
+    return (
+      <div suppressHydrationWarning>
+        {typeof window === "undefined" ? null : render(Component, pageProps)}
+      </div>
+    );
+  }
+}
 
+function render(
+  Component: AppProps["Component"],
+  pageProps: AppProps["pageProps"]
+) {
   return (
-    <div suppressHydrationWarning>
-      {typeof window === "undefined" ? null : (
-        <ErrorBoundary fallback={<ErrorPage />}>
-          <ThemeProvider theme={Theme}>
-            <ApolloProvider client={apolloClient}>
-              <GlobalStyle />
-              <Component {...pageProps} />
-            </ApolloProvider>
-          </ThemeProvider>
-        </ErrorBoundary>
-      )}
-    </div>
+    <ErrorBoundary fallback={<ErrorPage />}>
+      <ThemeProvider theme={Theme}>
+        <ApolloProvider client={apolloClient}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ApolloProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
