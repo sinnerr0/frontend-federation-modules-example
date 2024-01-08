@@ -9,7 +9,7 @@ export default function Apollo() {
     <>
       <h1>Apollo Cache Sharing Test</h1>
       <div style={{ padding: "1rem" }}>
-        <h2>Change the request params</h2>
+        <h2>Change the request params: Shell</h2>
 
         <label htmlFor="limit">Limit {limit}</label>
         <input
